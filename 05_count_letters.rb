@@ -15,9 +15,12 @@
 #
 
 def count_letters (string)
-  result = {} # You'll need an empty hash to get started!
-  
-  # Your code here
-
-  result # return the hash
+  result = Hash.new 0 # You'll need an empty hash to get started!
+  letters = string.split("")
+  letters.each do |i|
+    result[i] += 1
+  end
+  result
 end
+
+count_letters("mississippi")
