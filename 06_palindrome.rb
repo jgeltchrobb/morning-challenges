@@ -16,5 +16,19 @@
 #
 
 def palindrome (string)
-  # Your code here
+  start_count = 0
+  takeaway = -1
+  loop do
+    if string[string.length + takeaway] == string[start_count]
+      start_count += 1
+      takeaway -= 1
+      return true
+    else
+      return false
+      break
+    end
+  end
 end
+
+string1 = "hello"
+palindrome(string1)
