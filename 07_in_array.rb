@@ -17,5 +17,10 @@
 #Don't use any helpers other than .each
 #Try writing it on a whiteboard or paper first
 def in_array (needle, haystack)
-  # Your code here
+  haystack.each do |i|
+    if i == needle
+      return true
+    end
+  end
+  return false
 end
