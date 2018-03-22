@@ -21,7 +21,6 @@
 #
 
 class Dictionary
-  # attr_accessor :word, :definition
   def initialize(array: [])
     @array = array
   end
@@ -36,26 +35,20 @@ class Dictionary
   def lookup(word)
     @array.each do |i|
       i.each do |k, v|
-        if k == :word && v == word
-          found = true
-        end
-        if k == :definition
-          puts v
-        end          
+        if v == word
+          return i[:definition]
+        end   
       end
     end
     return "No such entry"
   end
 
   def total_words
-    puts @array.length
+    return @array.length
   end
 end
 
 dictionary = Dictionary.new
-
-# dictionary.word = "hi"
-# dictionary.definition = "greetings"
 
 dictionary.add_word("hi", "hello")
 dictionary.add_word("yo", "steve")
