@@ -24,5 +24,15 @@
 #
 
 def nthFibonacci (n)
-  # Your code here    
+  first_num = 0
+  second_num = 1
+  total = 0
+  total_arr = [first_num, second_num]
+  until total >= 100
+    total = first_num + second_num
+    first_num = second_num
+    second_num = total
+    total_arr.push(total)
+  end
+  return total_arr[n]
 end
