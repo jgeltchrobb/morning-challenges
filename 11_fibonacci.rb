@@ -23,16 +23,24 @@
 # ruby tests/11_fibonacci_test.rb
 #
 
+# def nthFibonacci (n)
+#   first_num = 0
+#   second_num = 1
+#   total = 0
+#   total_arr = [first_num, second_num]
+#   until total >= 100
+#     total = first_num + second_num
+#     first_num = second_num
+#     second_num = total
+#     total_arr.push(total)
+#   end
+#   return total_arr[n]
+# end
+
 def nthFibonacci (n)
-  first_num = 0
-  second_num = 1
-  total = 0
-  total_arr = [first_num, second_num]
-  until total >= 100
-    total = first_num + second_num
-    first_num = second_num
-    second_num = total
-    total_arr.push(total)
+  array = [0, 1]
+  while n > array.length - 1
+    array.push(array[-2] + array[-1])
   end
-  return total_arr[n]
+  return array[n]
 end
