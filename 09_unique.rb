@@ -19,5 +19,15 @@
 #
 
 def unique (mylist)
-  # Your code here
+  unique = {}
+  return_array = []
+  mylist.each do |i|
+    unique[i] = 1
+  end
+  unique.each do |k, v|
+    return_array.push(k)
+  end
+  return return_array
 end
+
+# unique(["hi", "hi", 1, "joe", "steve", 1, 3, "hi"])
