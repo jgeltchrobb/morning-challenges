@@ -27,3 +27,17 @@
 #
 
 # Your code here
+
+# 100.times do |x|
+#   if (x + 1) % 3 == 0
+#     puts "fizz"
+#   elsif (x + 1) % 5 == 0
+#     puts "buzz"
+#   elsif (x + 1) % 3 == 0 && x % 5 == 0
+#     puts "fizzbuzz"
+#   else
+#     puts (x + 1)
+#   end
+# end
+
+(1..100).each { |x| x % 3 == 0 ? (x % 5 == 0 ? (puts "fizzbuzz") : (puts "fizz")) : (x % 5 == 0 ? (puts "buzz") : (puts x)) }
