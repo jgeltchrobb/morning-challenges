@@ -31,6 +31,21 @@
 #
 
 def firstNonRepeat (string)
-  # Your code here
-  # Whiteboard first!
+  list = string.split("")
+  count_arr = []
+  list.each do |letter|
+    count = list.count(letter)
+    count_arr.push(count)
+    if count == 1
+      return letter
+    end
+  end
+    if !count_arr.include?(1)
+      return false
+    end
+    # count > 1 ? letter : false
 end
+
+string1 = "aasdffttghysghy"
+
+firstNonRepeat(string1)
