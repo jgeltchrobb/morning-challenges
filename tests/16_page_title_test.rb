@@ -6,6 +6,6 @@ class IncludedOnceTest < Test::Unit::TestCase
     assert_equal("Google", pageTitle("http://google.com"))
   end
   def test_facey
-    assert_equal("reddit: the front page of the internet", pageTitle("http://www.reddit.com"))
+    assert_equal("reddit: the front page of the internet", pageTitle("https://www.reddit.com"))
   end
 end
