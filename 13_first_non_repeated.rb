@@ -31,10 +31,9 @@
 #
 
 def firstNonRepeat (string)
-  list = string.split("")
   count_arr = []
-  list.each do |letter|
-    count = list.count(letter)
+  string.split("").each do |letter|
+    count = string.count(letter)
     count_arr.push(count)
     if count == 1
       return letter
@@ -43,7 +42,6 @@ def firstNonRepeat (string)
     if !count_arr.include?(1)
       return false
     end
-    # count > 1 ? letter : false
 end
 
 string1 = "aasdffttghysghy"
