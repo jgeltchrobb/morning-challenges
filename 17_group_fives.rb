@@ -11,3 +11,20 @@
 # Let the tests help you :)
 # ruby tests/17_group_fives_test.rb
 #
+
+
+def divisible_by_five(n)
+  n % 5 == 0 ? true : false
+end
+
+def group_fives(num_array)
+  group_arr = []
+  first_arr = []
+  second_arr = []
+  num_array.each do |item|
+    divisible_by_five(item) == true ? first_arr.push(item) : second_arr.push(item)
+  end
+  group_arr.push(first_arr, second_arr)
+end
+
+puts group_fives([32, 53, 55, 12, 10, 5, 11])
