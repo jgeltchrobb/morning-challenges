@@ -15,5 +15,12 @@
 #
 
 def calculate_income_tax (income)
-  # Your code here!
+  hash = {}
+  hash[:income] = income
+  if income <= 18200
+    hash[:tax] = nil
+    hash[:income_after_tax] = income
+  elsif income <= 37000
+    t = 3572
+    hash[:tax] = 
 end
