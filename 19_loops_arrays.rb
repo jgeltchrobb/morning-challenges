@@ -34,35 +34,47 @@ wAmount = 2
 calculated = false
 
 puts "Options"
-puts "[1] Add to order, [2] Print all current orders, [3] Exit"
+puts "[1] Add to order, [2] Print all current orders, [3] Profit, [4] Exit"
 
 choice = gets.chomp.to_i
-case choice
 
-when 1
-  until calculated
-    puts "Type your order, cocktail, water or beer"
-    order = gets.chomp.downcase
-    if order == "cocktail"
-      cAmount += 1
-      puts "Cocktail total: #{cAmount}"   
-      calculated = true 
-    elsif order == "beer"
-      bAmount += 1
-      puts "Beer total: #{bAmount}"    
-      calculated = true     
-    elsif order == "water"
-      wAmount += 1
-      puts "Water total: #{wAmount}"
-      calculated = true     
-    else
-      puts "Please enter a valid option"
+while choice < 4
+
+  case choice
+
+  when 1
+    until calculated
+      puts "Type your order: cocktail, water, beer or menu to exit"
+      order = gets.chomp.downcase
+      if order == "cocktail"
+        cAmount += 1
+        puts "Cocktail total: #{cAmount}"   
+      elsif order == "beer"
+        bAmount += 1
+        puts "Beer total: #{bAmount}"    
+      elsif order == "water"
+        wAmount += 1
+        puts "Water total: #{wAmount}"
+      elsif order == "menu"
+        calculated = true
+      else
+        puts "Please enter a valid option"
+      end
     end
+    
+
+  when 2
+    puts "To make..."
+    puts "Cocktails: #{cAmount}"
+    puts "Beers: #{bAmount}"
+    puts "Waters: #{wAmount}"
+  
+  when 3
+    puts "Total profit"
+    puts "Cocktails: $#{(cocktail + cCost) * cAmount}"
+    puts "Water: $#{(water + wCost) * wAmount}"
+    puts "Beers: $#{(beer + bCost) * bAmount}"    
   end
-
-when 2
-  puts "To make..."
-  puts "Cocktails: #{cAmount}"
-  puts "Beers: #{bAmount}"
-  puts "Waters: #{wAmount}"
-
+  puts "[1] Add to order, [2] Print all current orders, [3] Profit, [4] Exit"
+  choice = gets.chomp.to_i
+end
