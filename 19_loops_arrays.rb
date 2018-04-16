@@ -21,3 +21,48 @@
 # water sell for $6, and cost $0.15 to make
 
 # print out the total profit for the orders you have
+  
+cocktail = 22
+cCost = 8
+cAmount = 3
+beer = 12
+bCost = 3
+bAmount = 6
+water = 6
+wCost = 0.15
+wAmount = 2
+calculated = false
+
+puts "Options"
+puts "[1] Add to order, [2] Print all current orders, [3] Exit"
+
+choice = gets.chomp.to_i
+case choice
+
+when 1
+  until calculated
+    puts "Type your order, cocktail, water or beer"
+    order = gets.chomp.downcase
+    if order == "cocktail"
+      cAmount += 1
+      puts "Cocktail total: #{cAmount}"   
+      calculated = true 
+    elsif order == "beer"
+      bAmount += 1
+      puts "Beer total: #{bAmount}"    
+      calculated = true     
+    elsif order == "water"
+      wAmount += 1
+      puts "Water total: #{wAmount}"
+      calculated = true     
+    else
+      puts "Please enter a valid option"
+    end
+  end
+
+when 2
+  puts "To make..."
+  puts "Cocktails: #{cAmount}"
+  puts "Beers: #{bAmount}"
+  puts "Waters: #{wAmount}"
+
