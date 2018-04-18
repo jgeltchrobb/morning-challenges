@@ -8,3 +8,13 @@
 # Head office want a complete sku list with no duplicates.
 
 # Easy to do right? Now try working it out with three lines of code, you should be able to do it with 6 words and some operators and syntax.
+
+def sku(array)
+  return array.uniq
+end
+
+
+
+arr = ["112334", "276834", "098464", "356498", "065134", "124589", "132548", "102334", "278834", "078464", "356298", "085134", "134589", "112334", "276834", "098464", "356498", "065134", "124589", "132548"]
+
+puts sku(arr)
