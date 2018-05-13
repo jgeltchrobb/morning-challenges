@@ -7,3 +7,19 @@
 # sequenceSum(2,6,2) === 12 // 2 + 4 + 6
 # sequenceSum(1,5,1) === 15 // 1 + 2 + 3 + 4 + 5
 # sequenceSum(1,5,3) === 5 // 1 + 4
+
+def sequenceSum(a, b, c)
+  arr = []
+  total = 0
+  until a > b
+    arr.push(a)
+    a += c
+  end
+  arr.each do |i|
+    total += i
+  end
+  return total
+end
+
+
+puts sequenceSum(1, 5, 3)
